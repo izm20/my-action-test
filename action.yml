@@ -1,15 +1,15 @@
-description: "My first action with docker"
+name: 'My Action'
+description: 'My first action with docker'
 inputs:
-  FIRST_NAME:
-    default: John
-    description: "The first name"
-    required: false
-name: "My Action"
+ FIRST_NAME:
+   description: 'The first name'
+   required: false
+   default: 'John'
 outputs:
-  time:
-    description: "The elapsed time"
+ time:
+   description: 'The elapsed time'
 runs:
-  args:
-    - "${{ inputs.FIRST_NAME }}"
-  image: Dockerfile
-  using: docker
+ using: 'docker'
+ image: 'Dockerfile'
+ args:
+   - ${{ inputs.FIRST_NAME }}
